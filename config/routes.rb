@@ -1,4 +1,6 @@
 Boken::Application.routes.draw do
+  devise_for :users
+
   get "static/home"
 
   get "static/about"
