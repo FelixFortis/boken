@@ -6,6 +6,7 @@ When(/^I go to the Global goals page$/) do
 end
 Then(/^I should see the following goals:$/) do |expected_table|
   actual_table = goals.all
+  expected_table.diff!(actual_table)
 end
 Then(/^the title should be "([^"]*)"$/) do |page_name|
   find('title').should have_content page_name
