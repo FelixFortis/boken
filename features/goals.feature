@@ -5,12 +5,12 @@ Feature: managing the goals list
   So that I can track my progress and plan for the future
 
   Scenario: List all goals
-    Given the following goals:
+    Given the following goals exist:
       | Name   | Description   | Complete |
       | goal 1 | description 1 | true     |
       | goal 2 | description 2 | false    |
       | goal 3 | description 3 | true     |
-    When I go to the Global goals page
+    When I go to the Goals page
     Then I should see the following goals:
       | Name   | Description   | Complete |
       | goal 1 | description 1 | true     |

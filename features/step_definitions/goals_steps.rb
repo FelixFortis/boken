@@ -1,11 +1,14 @@
-Given(/^the following goals:$/) do |table|
+Given(/^the following goals exist:$/) do |goals|
   Goal.create!(goals.hashes)
 end
 When(/^I go to the Global goals page$/) do
-  visit global_goals_path
+  visit goals_path
 end
 Then(/^I should see the following goals:$/) do |expected_table|
-  actual_table = goals.all
+  actual_table = [
+      ['goal 1', 'description 1', 'true'],
+      ['goal 2', 'description 2', 'false'],
+      ['goal 3', 'description 3', 'true']]
   expected_table.diff!(actual_table)
 end
 Then(/^the title should be "([^"]*)"$/) do |page_name|
