@@ -6,7 +6,7 @@ Feature: managing the goals list
 
   Scenario: List all goals
     Given the following goals exist:
-      | Name   | Description   | Complete |
+      | name   | description   | complete |
       | goal 1 | description 1 | true     |
       | goal 2 | description 2 | false    |
       | goal 3 | description 3 | true     |

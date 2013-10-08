@@ -1,7 +1,7 @@
 Given(/^the following goals exist:$/) do |goals|
   Goal.create!(goals.hashes)
 end
-When(/^I go to the Global goals page$/) do
+When(/^I go to the Goals page$/) do
   visit goals_path
 end
 Then(/^I should see the following goals:$/) do |expected_table|
