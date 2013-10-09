@@ -16,5 +16,5 @@ Feature: managing the goals list
       | goal 1 | description 1 | true     |
       | goal 2 | description 2 | false    |
       | goal 3 | description 3 | true     |
-    And the title should be "Global goals"
+    And the title should be "adventureList | Global goals"
     And the heading should be "Global goals"
