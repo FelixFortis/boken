@@ -21,4 +21,13 @@ class GoalsController < ApplicationController
       end
     end
   end
+
+  def index
+    @goals = Goal.all
+
+    respond_to do |format|
+      format.html # new.html.haml
+      format.json { render json: @goals }
+    end
+  end
 end
