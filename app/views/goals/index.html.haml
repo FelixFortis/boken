@@ -1,3 +1,24 @@
 - provide :title, 'Global goals'
 
 %h1 Global goals
+
+%table
+  %tr
+    %th Name
+    %th Description
+    %th Complete
+    %th
+    %th
+    %th
+  - @goals.each do |goal|
+    %tr
+      %td
+        = goal.name
+      %td
+        = goal.description
+      %td
+        = goal.complete
+      %td
+        = link_to 'Show', goal_path(goal)
+      %td
+      %td

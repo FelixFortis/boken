@@ -2,7 +2,7 @@ Given(/^the following goals exist:$/) do |goals|
   Goal.create!(goals.hashes)
 end
 
-When(/^I go to the Goals page$/) do
+When(/^I go to the Global goals page$/) do
   visit goals_path
 end
 
@@ -24,7 +24,7 @@ Then(/^the heading should be "([^"]*)"$/) do |page_name|
 end
 
 When(/^I click the "([^"]*)" link in the third row$/) do |arg|
-  click_link('Show')[2]
+  click_link("#{arg}")[2]
 end
 
 Then(/^I should see the following goal:$/) do |expected_table|
@@ -39,7 +39,7 @@ When(/^I click the 'Back' link$/) do
   click_link 'Back'
 end
 
-Then(/^I should be on the goals page$/) do
-  page.should have_title 'adventureList | Gobal goals'
+Then(/^I should be on the Global goals page$/) do
+  page.should have_title 'adventureList | Global goals'
   find('h1').should have_content 'Global goals'
 end

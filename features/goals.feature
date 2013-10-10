@@ -10,7 +10,7 @@ Feature: managing the goals list
       | goal 1 | description 1 | true     |
       | goal 2 | description 2 | false    |
       | goal 3 | description 3 | true     |
-    When I go to the Goals page
+    When I go to the Global goals page
     Then I should see the following goals:
       | Name   | Description   | Complete |
       | goal 1 | description 1 | true     |
@@ -25,7 +25,7 @@ Feature: managing the goals list
       | goal 1 | description 1 | true     |
       | goal 2 | description 2 | false    |
       | goal 3 | description 3 | true     |
-    When I go to the Goals page
+    When I go to the Global goals page
     And I click the "Show" link in the third row
     Then I should see the following goal:
       | Name:        | name 3        |
@@ -33,4 +33,4 @@ Feature: managing the goals list
       | Complete:    | true          |
     And the title should be "adventureList"
     When I click the 'Back' link
-    Then I should be on the goals page
+    Then I should be on the Global goals page
