@@ -33,3 +33,16 @@ Feature: managing the goals list
     And the heading should be "Goal details"
     When I click the "Back" link
     Then I should be on the Global goals page
+
+  Scenario: Edit a goal
+    Given the following goal exists:
+      | name   | description   | complete |
+      | goal 1 | description 1 | true     |
+    When I go to the Global goals page
+    And I click the "Edit" link
+    Then I should see the following form fields:
+      | Name        | name 1        |
+      | Description | description 1 |
+      | Complete    | true          |
+    And the title should be "adventureList | Edit goal"
+    And the heading should be "Edit goal"
