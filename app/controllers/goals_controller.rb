@@ -30,4 +30,13 @@ class GoalsController < ApplicationController
       format.json { render json: @goals }
     end
   end
+
+  def show
+    @goal = Goal.find(params[:id])
+
+    respond_to do |format|
+      format.html # new.html.haml
+      format.json { render json: @goals }
+    end
+  end
 end

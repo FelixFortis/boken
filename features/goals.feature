@@ -20,16 +20,14 @@ Feature: managing the goals list
     And the heading should be "Global goals"
 
   Scenario: View a goal
-    Given the following goals exist:
+    Given the following goal exists:
       | name   | description   | complete |
       | goal 1 | description 1 | true     |
-      | goal 2 | description 2 | false    |
-      | goal 3 | description 3 | true     |
     When I go to the Global goals page
     And I click the "Show" link in the third row
     Then I should see the following goal:
-      | Name:        | name 3        |
-      | Description: | description 3 |
+      | Name:        | name 1        |
+      | Description: | description 1 |
       | Complete:    | true          |
     And the title should be "adventureList"
     When I click the 'Back' link

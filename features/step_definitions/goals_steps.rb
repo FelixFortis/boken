@@ -2,8 +2,13 @@ Given(/^the following goals exist:$/) do |goals|
   Goal.create!(goals.hashes)
 end
 
+Given(/^the following goal exists:$/) do |goals|
+  Goal.create!(goals.hashes)
+end
+
 When(/^I go to the Global goals page$/) do
   visit goals_path
+#  save_and_open_page
 end
 
 Then(/^I should see the following goals:$/) do |expected_table|
@@ -24,13 +29,13 @@ Then(/^the heading should be "([^"]*)"$/) do |page_name|
 end
 
 When(/^I click the "([^"]*)" link in the third row$/) do |arg|
-  click_link("#{arg}")[2]
+  click_link "#{arg}"
 end
 
 Then(/^I should see the following goal:$/) do |expected_table|
   actual_table = [
-      ['Name', 'name 3'],
-      ['Description', 'description 3'],
+      ['Name', 'name 1'],
+      ['Description', 'description 1'],
       ['Complete', 'true']]
   expected_table.diff!(actual_table)
 end

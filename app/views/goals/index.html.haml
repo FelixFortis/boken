@@ -1,4 +1,4 @@
-- provide :title, 'Global goals'
+- provide :title, '| Global goals'
 
 %h1 Global goals
 
@@ -19,6 +19,6 @@
       %td
         = goal.complete
       %td
-        = link_to 'Show', goal_path(goal)
+        = link_to 'Show', goal_path(goal), :class => "show"
       %td
       %td
