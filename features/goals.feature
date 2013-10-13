@@ -24,11 +24,12 @@ Feature: managing the goals list
       | name   | description   | complete |
       | goal 1 | description 1 | true     |
     When I go to the Global goals page
-    And I click the "Show" link in the third row
+    And I click the "Show" link
     Then I should see the following goal:
-      | Name:        | name 1        |
-      | Description: | description 1 |
-      | Complete:    | true          |
-    And the title should be "adventureList"
-    When I click the 'Back' link
+      | Name        | name 1        |
+      | Description | description 1 |
+      | Complete    | true          |
+    And the title should be "adventureList | Goal details"
+    And the heading should be "Goal details"
+    When I click the "Back" link
     Then I should be on the Global goals page

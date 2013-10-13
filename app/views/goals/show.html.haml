@@ -1,10 +1,17 @@
+- provide :title, '| Goal details'
+
+%h1 Goal details
+
 %table
   %tr
-    %td Name:
+    %td Name
     %td= @goal.name
   %tr
-    %td Description:
+    %td Description
     %td= @goal.description
   %tr
-    %td Complete:
+    %td Complete
     %td= @goal.complete
+  %tr
+    %td= link_to 'Back', goals_path
+    %td

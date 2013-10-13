@@ -28,20 +28,17 @@ Then(/^the heading should be "([^"]*)"$/) do |page_name|
   find('h1').should have_content page_name
 end
 
-When(/^I click the "([^"]*)" link in the third row$/) do |arg|
+When(/^I click the "([^"]*)" link$/) do |arg|
   click_link "#{arg}"
 end
 
 Then(/^I should see the following goal:$/) do |expected_table|
+  # save_and_open_page
   actual_table = [
       ['Name', 'name 1'],
       ['Description', 'description 1'],
       ['Complete', 'true']]
   expected_table.diff!(actual_table)
-end
-
-When(/^I click the 'Back' link$/) do
-  click_link 'Back'
 end
 
 Then(/^I should be on the Global goals page$/) do
