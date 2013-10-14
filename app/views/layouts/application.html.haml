@@ -1,29 +1,41 @@
-!!! 5
+!!!
 
 /[if lt IE 7 ] <html class=\"ie6\" lang=\"en\">
 /[if IE 7 ]    <html class=\"ie7\" lang=\"en\">
 /[if IE 8 ]    <html class=\"ie8\" lang=\"en\">
 /[if IE 9 ]    <html class=\"ie9\" lang=\"en\">
 /[if (gt IE 9)|!(IE)] <!--> <html lang=\"en\">
+%html{lang: "en", "ng-app" => ""}
+  %head
+    %meta{ :charset => "utf-8" }
+    -# Uncomment to make IE8 render like IE7
+    -# meta http-equiv="X-UA-Compatible" content="IE=7"
+    -# Set the viewport width to device width for mobile
+    %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1.0" }
 
-%head
-  %meta{ :charset => "utf-8" }
-  -# Uncomment to make IE8 render like IE7
-  -# meta http-equiv="X-UA-Compatible" content="IE=7"
-  -# Set the viewport width to device width for mobile
-  %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1.0" }
+    %title adventureList #{yield(:title)}
 
-  %title adventureList #{yield(:title)}
+    -# Included CSS and JS Files
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tag
 
-  -# Included CSS and JS Files
-  = stylesheet_link_tag "application"
-  = javascript_include_tag "application"
-  = csrf_meta_tag
-
-%body
-  .notice
-    =notice
-  .alert
-    =alert
-  =yield
+  %body
+    .navbar.navbar-inverse
+      .navbar-inner.container
+        %a.brand{ href: root_path } adventureList
+        %ul
+          %ul.nav
+            %li
+              %a{href: "#"} Home
+            %li
+              %a{href: "#"} Link
+            %li
+              %a{href: "#"} Link
+    .container
+      .notice
+        =notice
+      .alert
+        =alert
+      =yield
 
