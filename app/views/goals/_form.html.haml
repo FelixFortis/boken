@@ -1,0 +1,17 @@
+= form_for @goal do |f|
+  - if @goal.errors.any?
+    .alert.alert-error
+      %h4= "#{pluralize(@goal.errors.count, "error")} prohibited this goal from being saved:"
+      %ul
+        - @goal.errors.full_messages.each do |msg|
+          %li= msg
+
+  .table
+    = f.label :name
+    = f.text_field :name
+  .table
+    = f.label :description
+    = f.text_area :description, rows: 6
+  .table
+    = f.label :complete
+    = f.text_field :complete

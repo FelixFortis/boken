@@ -45,3 +45,12 @@ Then(/^I should be on the Global goals page$/) do
   page.should have_title 'adventureList | Global goals'
   find('h1').should have_content 'Global goals'
 end
+
+Then(/^I should see the following form fields:$/) do |expected_table|
+  # save_and_open_page
+  actual_table = [
+      ['Name', 'name 1'],
+      ['Description', 'description 1'],
+      ['Complete', 'true']]
+  expected_table.diff!(actual_table)
+end
