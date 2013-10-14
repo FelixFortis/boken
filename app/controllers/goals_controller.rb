@@ -1,9 +1,9 @@
-class ShowsController < ApplicationController
+class GoalsController < ApplicationController
 
   # GET /shows
   # GET /shows.json
   def index
-    @goals = Show.all
+    @goals = Goal.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,7 +14,7 @@ class ShowsController < ApplicationController
   # GET /shows/1
   # GET /shows/1.json
   def show
-    @goal = Show.find(params[:id])
+    @goal = Goal.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -25,7 +25,7 @@ class ShowsController < ApplicationController
   # GET /shows/new
   # GET /shows/new.json
   def new
-    @goal = Show.new
+    @goal = Goal.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,17 +35,17 @@ class ShowsController < ApplicationController
 
   # GET /shows/1/edit
   def edit
-    @goal = Show.find(params[:id])
+    @goal = Goal.find(params[:id])
   end
 
   # POST /shows
   # POST /shows.json
   def create
-    @goal = Show.new(params[:show])
+    @goal = Goal.new(params[:show])
 
     respond_to do |format|
       if @goal.save
-        format.html { redirect_to @goal, notice: 'Show was successfully created.' }
+        format.html { redirect_to @goal, notice: 'Goal was successfully created.' }
         format.json { render json: @goal, status: :created, location: @goal }
       else
         format.html { render action: "new" }
@@ -57,11 +57,11 @@ class ShowsController < ApplicationController
   # PUT /shows/1
   # PUT /shows/1.json
   def update
-    @goal = Show.find(params[:id])
+    @goal = Goal.find(params[:id])
 
     respond_to do |format|
       if @goal.update_attributes(params[:show])
-        format.html { redirect_to @goal, notice: 'Show was successfully updated.' }
+        format.html { redirect_to @goal, notice: 'Goal was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -73,7 +73,7 @@ class ShowsController < ApplicationController
   # DELETE /shows/1
   # DELETE /shows/1.json
   def destroy
-    @goal = Show.find(params[:id])
+    @goal = Goal.find(params[:id])
     @goal.destroy
 
     respond_to do |format|
