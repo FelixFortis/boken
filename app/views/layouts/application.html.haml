@@ -21,21 +21,21 @@
     = csrf_meta_tag
 
   %body
-    .navbar.navbar-inverse
-      .navbar-inner.container
-        %a.brand{ href: root_path } adventureList
-        %ul
-          %ul.nav
+    .navbar.navbar-inverse.navbar-fixed-top
+      .navbar-inner
+        .container
+          %a.brand{ href: root_path } adventureList
+          %ul.nav.pull-right
             %li
-              %a{href: "#"} Home
+              %a{href: "#"} Signed in as
             %li
-              %a{href: "#"} Link
+              %a{href: "#"} Sign in
             %li
-              %a{href: "#"} Link
+              %a{href: "#"} Logout
     .container
-      .notice
-        =notice
-      .alert
-        =alert
+      - if notice
+        %p= notice
+      - elsif alert
+        %p= alert
       =yield
 
