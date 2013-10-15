@@ -21,17 +21,8 @@
     = csrf_meta_tag
 
   %body
-    .navbar.navbar-inverse.navbar-fixed-top
-      .navbar-inner
-        .container
-          %a.brand{ href: root_path } adventureList
-          %ul.nav.pull-right
-            %li
-              %a{href: "#"} Signed in as
-            %li
-              %a{href: "#"} Sign in
-            %li
-              %a{href: "#"} Logout
+    = render 'layouts/topnav'
+
     .container
       - if notice
         %p= notice
@@ -39,3 +30,4 @@
         %p= alert
       =yield
 
+    = render 'layouts/footer'
