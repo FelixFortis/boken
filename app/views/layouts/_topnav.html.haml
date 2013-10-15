@@ -1,11 +1,18 @@
 .navbar.navbar-inverse.navbar-fixed-top
   .navbar-inner
     .container
-      %a.brand{ href: root_path } adventureList
-      %ul.nav.pull-right
-        %li
-          %a{href: "#"} Signed in as
-        %li
-          %a{href: "#"} Sign in
-        %li
-          %a{href: "#"} Logout
+      =link_to 'adventureList', root_path, class: "brand"
+      - if user_signed_in?
+        %ul.nav.pull-right
+          %li
+            = link_to "#{current_user.username}", root_path
+          %li
+            = link_to 'Goals', goals_path
+          %li
+            = link_to 'Logout', destroy_user_session_path, method: :delete
+      - else
+        %ul.nav.pull-right
+          %li
+            = link_to 'Login', new_user_session_path
+          %li
+            = link_to 'Sign up', new_user_registration_path
