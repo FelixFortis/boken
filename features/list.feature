@@ -5,6 +5,6 @@ Feature: A place for every goal. Every goal in it's place.
   I want to have a goals list
 
   Scenario:
-    Given I am not logged in
+    Given I am on the sign up page
     When I create an account
     Then an empty list should be created for me at the same time
