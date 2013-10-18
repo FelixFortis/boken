@@ -7,4 +7,4 @@ Feature: A place for every goal. Every goal in it's place.
   Scenario:
     Given I am on the sign up page
     When I create an account
-    Then an empty list should be created for me at the same time
+    Then a new list should be created for me at the same time

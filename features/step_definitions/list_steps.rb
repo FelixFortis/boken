@@ -10,6 +10,6 @@ When(/^I create an account$/) do
   click_button 'Submit sign up'
 end
 
-Then(/^an empty list should be created for me at the same time$/) do
+Then(/^a new list should be created for me at the same time$/) do
   pending
 end
