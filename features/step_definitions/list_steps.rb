@@ -5,11 +5,11 @@ end
 When(/^I create an account$/) do
   fill_in 'Username', with: 'Test'
   fill_in 'Email', with: 'test@example.com'
-  fill_in 'Password', with: 'abc12345'
-  fill_in 'Password confirmation', with: 'abc12345'
+  fill_in 'user_password', with: 'abc12345'
+  fill_in 'user_password_confirmation', with: 'abc12345'
   click_button 'Submit sign up'
 end
 
-Then(/^a new list should be created for me at the same time$/) do
-  pending
+Then(/^I should be able to visit my list page$/) do
+  visit list_path
 end
