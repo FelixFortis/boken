@@ -11,5 +11,5 @@ When(/^I create an account$/) do
 end
 
 Then(/^I should be able to visit my list page$/) do
-  visit list_path
+  visit user_list_path
 end

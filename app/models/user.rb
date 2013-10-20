@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
 
-  has_one :list
+  after_create :create_list(user)
+
+  has_one :list, dependent: :destroy
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -13,4 +15,9 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :username, :email, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
+
+  protected
+  def create_list(user)
+    List.create!(user_id: user.id)
+  end
 end
