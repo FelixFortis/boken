@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  after_create :create_list(user)
+  # after_create :create_list
 
   has_one :list, dependent: :destroy
 

@@ -1,5 +1,5 @@
 class GoalsController < ApplicationController
-
+  before_save :authenticate_user!
   # GET /shows
   # GET /shows.json
   def index
