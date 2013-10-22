@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe User do
 
-  describe "user signup" do
+  describe "ignup" do
     before :each do
       @new_user = FactoryGirl.create(:user)
     end
