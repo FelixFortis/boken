@@ -20,6 +20,6 @@ class User < ActiveRecord::Base
 
   protected
   def create_list
-    List.create(user_id: self)
+    List.create!(user_id: self.id)
   end
 end
