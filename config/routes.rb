@@ -1,9 +1,9 @@
 Boken::Application.routes.draw do
   resources :goals
 
-  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}, path: "accounts"
+  devise_for :users, path: "accounts", path_names: {sign_in: "login", sign_out: "logout"}
 
-  resource :user do
+  resources :users do
     resource :list
   end
 

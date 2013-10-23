@@ -29,18 +29,18 @@ class ListsController < ApplicationController
   # GET /users/:user_id/lists/:id/edit
   def edit
     #1st you retrieve the user thanks to params[:user_id]
-    user = User.find(params[:user_id])
+    @user = User.find(params[:user_id])
     #2nd you retrieve the list thanks to params[:id]
-    @list = user.lists.find(params[:id])
+    @list = @user.lists.find(params[:id])
   end
 
   # PUT /users/:user_id/lists/:id
   # PUT /users/:user_id/lists/:id.xml
   def update
     #1st you retrieve the user thanks to params[:user_id]
-    user = User.find(params[:user_id])
+    @user = User.find(params[:user_id])
     #2nd you retrieve the list thanks to params[:id]
-    @list = user.lists.find(params[:id])
+    @list = @user.lists.find(params[:id])
 
     respond_to do |format|
       if @list.update_attributes(params[:list])
@@ -56,7 +56,7 @@ class ListsController < ApplicationController
 
   def destroy
     @user = User.find(params[:user_id])
-    @list = user.lists.find(params[:id])
+    @list = @user.lists.find(params[:id])
     @list.destroy
   end
 end
