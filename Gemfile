@@ -29,6 +29,7 @@ group :development do
   gem 'pry'
   gem 'pry-doc'
   gem 'brakeman', :require => false
+  gem 'meta_request'
 end
 
 group :development, :test do
