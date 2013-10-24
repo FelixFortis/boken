@@ -17,8 +17,7 @@ class ListsController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    @list = @user.list
+    @list = current_user.list
 
     respond_to do |format|
       format.html # show.html.erb
