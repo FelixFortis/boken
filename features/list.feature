@@ -8,3 +8,8 @@ Feature: A place for every goal. Every goal in it's place.
     Given I am on the sign up page
     When I create an account
     Then I should be able to visit my list page
+
+  Scenario: Listing goals on a user's list
+    Given I am currently signed in
+    When I visit my list page
+    Then I should see my goals listed out
