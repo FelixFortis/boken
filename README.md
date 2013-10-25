@@ -3,24 +3,24 @@ Boken: Japanese for adventure, apparently...
 
 This is an app I'm building to showcase what I can do in Rails while I'm searching for employment, and to practice building apps from start to finish. And most importantly, because it's fricking fun!
 
-This app will (hopefully) demonstrate:
+This app will (when finished) demonstrate:
 --------------------------------------
 
 **Back end:**
-> Version control (obviously!)
-> Understanding the MVC architecture (along with clever models, dumb controllers and skinny views)
-> A test-first and BDD approach to programming in Rails using Cucumber, RSpec and friends
-> RESTful routing/nested routing
-> Migrations and database manipulation/associations using ActiveRecord and PostgreSQL
-> Researching and implementing various gems to increase efficiency to avoid re-inventing the wheel (e.g. better_errors and devise)
-> App deployment using Heroku
+* Version control (obviously!)
+* Understanding the MVC architecture (along with clever models, dumb controllers and skinny views)
+* A test-first and BDD approach to programming in Rails using Cucumber, RSpec and friends
+* RESTful routing/nested routing
+* Migrations and database manipulation/associations using ActiveRecord and PostgreSQL
+* Researching and implementing various gems to increase efficiency to avoid re-inventing the wheel (e.g. better_errors and devise)
+* App deployment using Heroku
 
 **Front end**
-> The asset pipeline
-> HTML5/Haml, Javascript/CoffeeScript, CSS3/Sass
-> Style gems such as bootstrap, will_paginate and simple_form
-> Client-side JS frameworking using AngularJS
-> Rails helpers such as layouts, partials, form helpers and link helpers
+* The asset pipeline
+* HTML5/Haml, Javascript/CoffeeScript, CSS3/Sass
+* Style gems such as bootstrap, will_paginate and simple_form
+* Client-side JS frameworking using AngularJS
+* Rails helpers such as layouts, partials, form helpers and link helpers
 
 
 The gist of the app is that you can login and that each user has a goals list.
