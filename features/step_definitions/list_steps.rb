@@ -13,3 +13,15 @@ end
 Then(/^I should be able to visit my list page$/) do
   visit user_list_path(current_user)
 end
+
+Given(/^I am currently signed in$/) do
+  pending
+end
+
+When(/^I visit my list page$/) do
+  pending
+end
+
+Then(/^I should see my goals listed out$/) do
+  pending
+end
