@@ -6,7 +6,7 @@ class ListsController < ApplicationController
   end
 
   def create
-    @user = user_id
+    @user = current_user
     @list = @user.lists.build(params[:list])
     # @list.user_id = current_user.id
 
