@@ -1,7 +1,7 @@
 class GoalsController < ApplicationController
 
-  # GET /shows
-  # GET /shows.json
+  # GET /goals
+  # GET /goals.json
   def index
     @goals = Goal.all
 
@@ -11,19 +11,19 @@ class GoalsController < ApplicationController
     end
   end
 
-  # GET /shows/1
-  # GET /shows/1.json
-  def show
+  # GET /goals/1
+  # GET /goals/1.json
+  def goal
     @goal = Goal.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html # goal.html.erb
       format.json { render json: @goal }
     end
   end
 
-  # GET /shows/new
-  # GET /shows/new.json
+  # GET /goals/new
+  # GET /goals/new.json
   def new
     @goal = Goal.new
 
@@ -33,15 +33,15 @@ class GoalsController < ApplicationController
     end
   end
 
-  # GET /shows/1/edit
+  # GET /goals/1/edit
   def edit
     @goal = Goal.find(params[:id])
   end
 
-  # POST /shows
-  # POST /shows.json
+  # POST /goals
+  # POST /goals.json
   def create
-    @goal = Goal.new(params[:show])
+    @goal = Goal.new(params[:goal])
 
     respond_to do |format|
       if @goal.save
@@ -54,13 +54,13 @@ class GoalsController < ApplicationController
     end
   end
 
-  # PUT /shows/1
-  # PUT /shows/1.json
+  # PUT /goals/1
+  # PUT /goals/1.json
   def update
     @goal = Goal.find(params[:id])
 
     respond_to do |format|
-      if @goal.update_attributes(params[:show])
+      if @goal.update_attributes(params[:goal])
         format.html { redirect_to @goal, notice: 'Goal was successfully updated.' }
         format.json { head :no_content }
       else
@@ -70,14 +70,14 @@ class GoalsController < ApplicationController
     end
   end
 
-  # DELETE /shows/1
-  # DELETE /shows/1.json
+  # DELETE /goals/1
+  # DELETE /goals/1.json
   def destroy
     @goal = Goal.find(params[:id])
     @goal.destroy
 
     respond_to do |format|
-      format.html { redirect_to shows_url }
+      format.html { redirect_to goals_url }
       format.json { head :no_content }
     end
   end
