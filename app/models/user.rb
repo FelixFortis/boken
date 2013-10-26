@@ -20,9 +20,9 @@
 
 class User < ActiveRecord::Base
 
-  after_create :create_list
+  after_create :create_profile
 
-  has_one :list, dependent: :destroy
+  has_one :profile, dependent: :destroy
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -39,7 +39,7 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
   protected
-  def create_list
-    List.create!(user_id: self.id)
+  def create_profile
+    Profile.create!(user_id: self.id)
   end
 end
