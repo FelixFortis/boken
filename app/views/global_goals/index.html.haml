@@ -1,0 +1,17 @@
+%h1 Listing global_goals
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @global_goals.each do |global_goal|
+    %tr
+      %td= link_to 'Show', global_goal
+      %td= link_to 'Edit', edit_global_goal_path(global_goal)
+      %td= link_to 'Destroy', global_goal, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Global goal', new_global_goal_path
