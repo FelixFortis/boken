@@ -1,12 +1,14 @@
 class ListsController < ApplicationController
 
   def new
+    @user = User.find(params[:id])
     @list = List.new
   end
 
   def create
-    @user = User.find(params[:id])
+    @user = user_id
     @list = @user.lists.build(params[:list])
+    # @list.user_id = current_user.id
 
     respond_to do |format|
       if @list.save
@@ -17,6 +19,7 @@ class ListsController < ApplicationController
   end
 
   def show
+    @user = current_user
     @list = current_user.list
 
     respond_to do |format|
