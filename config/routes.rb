@@ -4,7 +4,7 @@ Boken::Application.routes.draw do
 
   resources :global_goals
   resources :users do
-    resource :list
+    resource :profile
   end
 
  # match '/mylist' => user_list_path(current_user)

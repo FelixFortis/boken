@@ -5,7 +5,7 @@
       - if user_signed_in?
         %ul.nav.pull-right
           %li
-            = link_to "#{current_user.username}", user_list_path(current_user)
+            = link_to "#{current_user.username}", user_profile_path(current_user)
           %li
             = link_to 'Goals', goals_path
           %li
