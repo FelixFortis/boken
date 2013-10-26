@@ -13,7 +13,7 @@ class GoalsController < ApplicationController
 
   # GET /goals/1
   # GET /goals/1.json
-  def goal
+  def show
     @goal = Goal.find(params[:id])
 
     respond_to do |format|

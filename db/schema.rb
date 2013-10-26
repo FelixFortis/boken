@@ -11,12 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131020181523) do
+ActiveRecord::Schema.define(:version => 20131026073427) do
 
   create_table "goals", :force => true do |t|
     t.string  "name"
     t.text    "description"
-    t.boolean "complete"
+    t.boolean "complete",    :default => false
   end
 
   create_table "lists", :force => true do |t|
