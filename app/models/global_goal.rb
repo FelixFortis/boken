@@ -11,7 +11,8 @@
 #
 
 class GlobalGoal < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :profile
 
-  attr_accessible :title, :description
+  attr_accessible :title, :description, :tag_list
+  acts_as_taggable
 end

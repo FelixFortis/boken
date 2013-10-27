@@ -10,4 +10,6 @@
 
 class Profile < ActiveRecord::Base
   belongs_to :user
+  has_many :user_goals
+  has_many :global_goals
 end

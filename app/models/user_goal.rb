@@ -14,5 +14,7 @@
 #
 
 class UserGoal < ActiveRecord::Base
+  belongs_to :profile
+
   attr_accessible :complete, :deadline, :goal_id, :notes, :percent_complete, :user_id
 end

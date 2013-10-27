@@ -16,6 +16,7 @@ gem 'bootstrap-will_paginate'
 gem 'rails_best_practices'
 gem 'reek'
 gem 'activeadmin'
+gem 'acts-as-taggable-on', '~> 2.4.1'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
