@@ -7,7 +7,7 @@
           %li
             = link_to "#{current_user.username}", user_profile_path(current_user)
           %li
-            = link_to 'Goals', goals_path
+            = link_to 'Goals', global_goals_path
           %li
             = link_to 'Logout', destroy_user_session_path, method: :delete
       - else

@@ -20,8 +20,6 @@
 
 class User < ActiveRecord::Base
 
-  after_create :create_profile
-
   has_one :profile, dependent: :destroy
 
   # Include default devise modules. Others available are:
@@ -38,8 +36,4 @@ class User < ActiveRecord::Base
   attr_accessible :username, :email, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
 
-  protected
-  def create_profile
-    Profile.create!(user_id: self.id)
-  end
 end

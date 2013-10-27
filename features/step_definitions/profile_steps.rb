@@ -11,7 +11,7 @@ When(/^I create an account$/) do
 end
 
 Then(/^I should be able to visit my list page$/) do
-  visit user_list_path(@user)
+  visit user_profile_path(current_user)
 end
 
 Given(/^I am currently signed in$/) do
@@ -29,16 +29,15 @@ Then(/^I should see my goals listed out$/) do
   pending
 end
 
-When(/^I create a goal with the name "([^"]*)" and the description "([^"]*)"$/) do |name, desc|
-  Goal.create!(name: "#{name}", description: "#{desc}", complete: false)
+When(/^I create a goal with the name "([^"]*)" and the description "([^"]*)"$/) do |title, desc|
+  GlobalGoal.create!(title: "#{title}", description: "#{desc}")
 end
 
 Then(/^I should see that goal on my list page$/) do |expected_table|
   visit user_list_path(current_user)
   # save_and_open_page
   actual_table = [
-      ['Name', 'Test 1 name'],
-      ['Description', 'Test 1 description'],
-      ['Complete', 'false']]
+      ['Title', 'Test 1 name'],
+      ['Description', 'Test 1 description']]
   expected_table.diff!(actual_table)
 end

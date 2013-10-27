@@ -13,10 +13,10 @@ end
 
 Then(/^I should see the following goals:$/) do |expected_table|
   actual_table = [
-      ['Name', 'Description', 'Complete'],
-      ['goal 1', 'description 1', 'true'],
-      ['goal 2', 'description 2', 'false'],
-      ['goal 3', 'description 3', 'true']]
+      ['Title', 'Description'],
+      ['goal 1', 'description 1'],
+      ['goal 2', 'description 2'],
+      ['goal 3', 'description 3']]
   expected_table.diff!(actual_table)
 end
 
@@ -35,9 +35,8 @@ end
 Then(/^I should see the following goal:$/) do |expected_table|
   # save_and_open_page
   actual_table = [
-      ['Name', 'name 1'],
-      ['Description', 'description 1'],
-      ['Public', 'true']]
+      ['Title', 'name 1'],
+      ['Description', 'description 1']]
   expected_table.diff!(actual_table)
 end
 
@@ -49,8 +48,7 @@ end
 Then(/^I should see the following form fields:$/) do |expected_table|
   # save_and_open_page
   actual_table = [
-      ['Name', 'name 1'],
-      ['Description', 'description 1'],
-      ['Public', 'true']]
+      ['Title', 'name 1'],
+      ['Description', 'description 1']]
   expected_table.diff!(actual_table)
 end
