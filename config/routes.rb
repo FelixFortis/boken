@@ -7,8 +7,6 @@ Boken::Application.routes.draw do
     resource :profile
   end
 
- # match '/mylist' => user_list_path(current_user)
-  match '/myprofile' => 'profiles#show'
   match '/contact' => 'static#contact'
   match '/about' => 'static#about'
 

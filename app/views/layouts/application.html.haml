@@ -24,10 +24,11 @@
     = render 'layouts/topnav'
 
     .container
-      - if notice
-        %p= notice
-      - elsif alert
-        %p= alert
-      =yield
+      .content-main
+        - if notice
+          %p= notice
+        - elsif alert
+          %p= alert
+        =yield
 
     = render 'layouts/footer'
