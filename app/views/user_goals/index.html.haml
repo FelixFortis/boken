@@ -1,0 +1,29 @@
+%h1 Listing user_goals
+
+%table
+  %tr
+    %th User
+    %th Goal
+    %th Notes
+    %th Deadline
+    %th Percent complete
+    %th Complete
+    %th
+    %th
+    %th
+
+  - @user_goals.each do |user_goal|
+    %tr
+      %td= user_goal.user_id
+      %td= user_goal.goal_id
+      %td= user_goal.notes
+      %td= user_goal.deadline
+      %td= user_goal.percent_complete
+      %td= user_goal.complete
+      %td= link_to 'Show', user_goal
+      %td= link_to 'Edit', edit_user_goal_path(user_goal)
+      %td= link_to 'Destroy', user_goal, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New User goal', new_user_goal_path

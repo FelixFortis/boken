@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @user_goal.user_id
+%p
+  %b Goal:
+  = @user_goal.goal_id
+%p
+  %b Notes:
+  = @user_goal.notes
+%p
+  %b Deadline:
+  = @user_goal.deadline
+%p
+  %b Percent complete:
+  = @user_goal.percent_complete
+%p
+  %b Complete:
+  = @user_goal.complete
+
+= link_to 'Edit', edit_user_goal_path(@user_goal)
+\|
+= link_to 'Back', user_goals_path

@@ -1,26 +1,10 @@
-Feature: A place for every goal. Every goal in it's place.
+Feature: Additional user info shared with other users
 
-  In order to keep all my goals in one place
-  As a user with many goals
-  I want to have a profile and a personal list of goals
+  In order to keep all my public user information in one place
+  As a user
+  I want to have a profile page
 
   Scenario: Creating a profile alongside a user
     Given I am on the sign up page
     When I create an account
     Then I should be able to visit my profile page
-
-  Scenario: Adding goals to my list via goal creation
-    Given I am currently signed in
-    When I create a goal with the title "Test 1 name" and the description "Test 1 description"
-    Then I should see that goal on my list page
-
-#  Scenario: Adding goals to my list via button click
-#    Given I am currently signed in
-#    When I visit the global goals page
-#    And I click the "Add goal" link on the first goal
-#    Then I should see that goal on my list page
-
-#  Scenario: Listing goals on a user's list
-#    Given I am currently signed in
-#    When I visit my list page
-#    Then I should see my goals listed out
