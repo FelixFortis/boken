@@ -28,19 +28,19 @@ Feature: managing the goals list
     Then I should see the following goal:
       | Title        | name 1        |
       | Description  | description 1 |
-    And the title should be "adventureList | Goal details"
-    And the heading should be "Goal details"
+    And the title should be "adventureList | Global goal details"
+    And the heading should be "Global goal details"
     When I click the "Back" link
     Then I should be on the Global goals page
 
   Scenario: Edit a goal
     Given the following goal exists:
-      | title   | description   | complete |
-      | goal 1  | description 1 | true     |
+      | title   | description   |
+      | goal 1  | description 1 |
     When I go to the Global goals page
     And I click the "Edit" link
     Then I should see the following form fields:
       | Title        | name 1        |
       | Description  | description 1 |
-    And the title should be "adventureList | Edit goal"
-    And the heading should be "Edit goal"
+    And the title should be "adventureList | Edit global goal"
+    And the heading should be "Edit global goal"
