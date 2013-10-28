@@ -2,6 +2,18 @@
 
 %h1 Global goal details
 
+%table.table
+  %tr
+    %th Title
+    %th Description
+    %th Tags
+  %tr
+    %td
+      = @global_goal.title
+    %td
+      = @global_goal.description
+    %td
+      = @global_goal.tags_list.map { |t| t }
 
 = link_to 'Edit', edit_global_goal_path(@global_goal)
 \|

@@ -6,6 +6,7 @@
   %tr
     %th Name
     %th Description
+    %th Tags
     %th
     %th
     %th
@@ -15,6 +16,8 @@
         = goal.title
       %td
         = goal.description
+      %td
+        = goal.tags_list
       %td
         = link_to 'Show', global_goal_path(goal)
       %td
