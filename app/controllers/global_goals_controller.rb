@@ -2,7 +2,11 @@ class GlobalGoalsController < ApplicationController
   # GET /global_goals
   # GET /global_goals.json
   def index
-    @global_goals = GlobalGoal.all
+    if params[:tag]
+      @global_goals  = GlobalGoal.tagged_with(params[:tag])
+    else
+      @global_goals = GlobalGoal.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb

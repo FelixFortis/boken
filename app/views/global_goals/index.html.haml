@@ -1,29 +1,36 @@
 - provide :title, '| Global goals'
 
 %h1 Global goals
-
 %table.table
   %tr
-    %th Name
-    %th Description
-    %th Tags
-    %th
-    %th
-    %th
-  - @global_goals.each do |goal|
-    %tr
-      %td
-        = goal.title
-      %td
-        = goal.description
-      %td
-        = goal.tags_list
-      %td
-        = link_to 'Show', global_goal_path(goal)
-      %td
-        = link_to 'Edit', edit_global_goal_path(goal)
-      %td
-        = link_to 'Add goal', root_path
+    %td
+      #tag_cloud
+        - tag_cloud GlobalGoal.tag_counts, %w{s m l} do |tag, css_class|
+          = link_to tag.name, tag_path(tag.name), class: css_class
+  %tr
+    %td
+      %table.table
+        %tr
+          %th Name
+          %th Description
+          %th Tags
+          %th
+          %th
+          %th
+        - @global_goals.each do |goal|
+          %tr
+            %td
+              = goal.title
+            %td
+              = goal.description
+            %td
+              = raw goal.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')
+            %td
+              = link_to 'Show', global_goal_path(goal)
+            %td
+              = link_to 'Edit', edit_global_goal_path(goal)
+            %td
+              = link_to 'Add goal', root_path
 
 %br
 
