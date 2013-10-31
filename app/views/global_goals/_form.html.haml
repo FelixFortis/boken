@@ -2,9 +2,9 @@
   = f.error_notification
 
   .form-inputs
-    = f.input :title
-    = f.input :description
-    = f.input :tag_list, label: "Tags (separated by commas)"
+    = f.input :title, placeholder: "Climb Everest", :required => true, :autofocus => true
+    = f.input :description, placeholder: "Train for, save for and climb Mount Everest", :required => true
+    = f.input :tag_list, label: "Tags", placeholder: "Separated by commas", :required => true
 
   .form-actions
     = f.button :submit

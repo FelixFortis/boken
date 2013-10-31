@@ -33,3 +33,11 @@ body {
   .m { font-size: 1.2em; }
   .l { font-size: 1.8em; }
 }
+
+#global_goal_description, #global_goal_title, #global_goal_tag_list {
+  width: 98.5%;
+}
+
+#global_goal_description {
+  height: 100px;
+}
