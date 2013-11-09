@@ -3,33 +3,34 @@
 %h1 Global goals
 %table.table
   %tr
+    %th Tags
+  %tr
     %td
       #tag_cloud
         - tag_cloud GlobalGoal.tag_counts, %w{s m l} do |tag, css_class|
           = link_to tag.name, tag_path(tag.name), class: css_class
-%table.table
-  %tr
-    %th Name
-    %th Description
-    %th Tags
-    %th
-    %th
-    %th
-  - @global_goals.each do |goal|
-    %tr
-      %td
-        = goal.title
-      %td
-        = goal.description
-      %td
-        = raw goal.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')
-      %td
+- @global_goals.each do |goal|
+  .alternating
+    %h4
+      =goal.title
+    %p
+      %strong
+        Description:
+      = goal.description
+    %p
+      %strong
+        Tags:
+      = raw goal.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')
+    %br
+    .btn-group
+      .btn
         = link_to 'Show', global_goal_path(goal)
-      %td
+      .btn
         = link_to 'Edit', edit_global_goal_path(goal)
-      %td
-        = link_to 'Add goal', root_path
+      .btn
+        = link_to 'Add to my list', root_path
 
-%br
-
-= link_to 'New Global goal', new_global_goal_path
+.index-bottom
+  .btn-group
+    .btn.btn-success
+      = link_to 'New goal', new_global_goal_path

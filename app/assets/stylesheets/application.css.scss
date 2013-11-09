@@ -13,10 +13,33 @@
  */
 @import "bootstrap";
 
+.alternating {
+  padding:20px;
+  border-top: 1px solid #cccccc;
+  border-left: 1px solid #cccccc;
+  border-right: 1px solid #cccccc;
+  &:nth-child(even) {
+    background-color: rgba(255,255,255,0.4);
+  }
+  &:last-of-type {
+    border-bottom: 1px solid #cccccc !important;
+  }
+}
+
 body {
   padding-top: 60px;
   margin-bottom: 60px;
   background: url("texture_bg.jpg") repeat;
+}
+
+.btn-success {
+  color: #ffffff;
+  a {
+    color: #ffffff;
+    &:visited {
+      color: #ffffff;
+    }
+  }
 }
 
 .content-main {
@@ -26,18 +49,23 @@ body {
   padding: 18px;
 }
 
-#tag_cloud {
-  width: 400px;
-  line-height: 1.6em;
-  .s { font-size: 0.8em; }
-  .m { font-size: 1.2em; }
-  .l { font-size: 1.8em; }
-}
-
 #global_goal_description, #global_goal_title, #global_goal_tag_list {
   width: 98.5%;
 }
 
 #global_goal_description {
   height: 100px;
+}
+
+.index-bottom{
+  padding: 20px;
+  border: 1px solid #cccccc;
+}
+
+#tag_cloud {
+  width: 400px;
+  line-height: 1.6em;
+  .s { font-size: 0.8em; }
+  .m { font-size: 1.2em; }
+  .l { font-size: 1.8em; }
 }
