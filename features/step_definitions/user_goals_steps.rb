@@ -1,8 +1,10 @@
-Given(/^I am currently signed in$/) do
-  visit new_user_session_path
-  fill_in 'Username', with: 'ininitehorses'
-  fill_in 'Password', with: 'abc12345'
-  click_button 'Login'
+Given(/^I am currently logged in$/) do
+  visit new_user_registration_path
+  fill_in 'Username', with: 'Test'
+  fill_in 'Email', with: 'test@example.com'
+  fill_in 'user_password', with: 'abc12345'
+  fill_in 'user_password_confirmation', with: 'abc12345'
+  click_button 'Submit sign up'
 end
 
 When(/^I create a goal with the title "([^"]*)" and the description "([^"]*)"$/) do |title, desc|
@@ -10,7 +12,8 @@ When(/^I create a goal with the title "([^"]*)" and the description "([^"]*)"$/)
 end
 
 When(/^I visit my list page$/) do
-  visit profile_user_goals_path(profile)
+  # save_and_open_page
+  click_link 'My goals'
 end
 
 Then(/^I should see that goal listed$/) do |expected_table|
