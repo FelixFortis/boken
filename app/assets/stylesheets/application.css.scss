@@ -32,6 +32,16 @@ body {
   background: url("texture_bg.jpg") repeat;
 }
 
+.btn {
+  a {
+    &:hover {
+      text-decoration: none;
+      color: #666666;
+      background-color: rgba(255,255,255,0.01);
+    }
+  }
+}
+
 .btn-success {
   color: #ffffff;
   a {
@@ -57,7 +67,7 @@ body {
   height: 100px;
 }
 
-.index-bottom{
+.index-bottom {
   padding: 20px;
   border: 1px solid #cccccc;
 }
