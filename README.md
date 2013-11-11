@@ -31,6 +31,8 @@ You can create goals and add them to your list. (currently working on this scena
 
 Other users can look at all goals that have ever been created, or the goals of their friends, and add them to their own list at the click of a button.
 
+Once a goal is on someone's list, they are able to add additional information such as timeframes and goal steps so that they can personalise their goals without tainting the global goals.
+
 Goals can be created or deleted by users, but will always remain on the global list for others to check out and add to their list if they wish.
 
 Admins can permanently delete goals from the global list (e.g. if they are duplicates/don't make any sense etc) to keep things tidy.
