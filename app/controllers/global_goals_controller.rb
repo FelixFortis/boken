@@ -1,4 +1,7 @@
 class GlobalGoalsController < ApplicationController
+
+  after_create build_user_goal
+
   # GET /global_goals
   # GET /global_goals.json
   def index
@@ -83,5 +86,11 @@ class GlobalGoalsController < ApplicationController
       format.html { redirect_to global_goals_url }
       format.json { head :no_content }
     end
+  end
+
+  protected
+
+  def build_user_goal(gg)
+    UserGoal.create(global_goal_id: gg.id)
   end
 end
