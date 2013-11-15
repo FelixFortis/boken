@@ -1,6 +1,6 @@
 class GlobalGoalsController < ApplicationController
 
-  after_create build_user_goal
+  after_filter :build_user_goal, only: :create
 
   # GET /global_goals
   # GET /global_goals.json
@@ -90,7 +90,7 @@ class GlobalGoalsController < ApplicationController
 
   protected
 
-  def build_user_goal(gg)
-    UserGoal.create(global_goal_id: gg.id, description: gg.description, title: gg.title)
-  end
+    def build_user_goal
+      UserGoal.create(global_goal_id: @global_goal.id, description: @global_goal.description, title: @global_goal.title)
+    end
 end

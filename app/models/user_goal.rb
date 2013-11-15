@@ -11,6 +11,8 @@
 #  complete         :boolean
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
+#  title            :string(255)
+#  description      :text
 #
 
 class UserGoal < ActiveRecord::Base
