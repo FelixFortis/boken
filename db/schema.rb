@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131115072525) do
+ActiveRecord::Schema.define(:version => 20131115204629) do
 
   create_table "global_goals", :force => true do |t|
     t.string   "title"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(:version => 20131115072525) do
 
   create_table "user_goals", :force => true do |t|
     t.integer  "profile_id"
-    t.integer  "goal_id"
+    t.integer  "global_goal_id"
     t.text     "notes"
     t.date     "deadline"
     t.integer  "percent_complete"

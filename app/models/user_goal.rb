@@ -4,7 +4,7 @@
 #
 #  id               :integer          not null, primary key
 #  profile_id       :integer
-#  goal_id          :integer
+#  global_goal_id   :integer
 #  notes            :text
 #  deadline         :date
 #  percent_complete :integer
@@ -18,5 +18,5 @@
 class UserGoal < ActiveRecord::Base
   belongs_to :profile
 
-  attr_accessible :complete, :deadline, :goal_id, :notes, :percent_complete, :user_id
+  attr_accessible :complete, :deadline, :global_goal_id, :notes, :percent_complete, :user_id, :description, :title
 end
