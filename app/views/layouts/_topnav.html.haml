@@ -12,7 +12,7 @@
               %li
                 = link_to 'My profile', user_profile_path(current_user), id: "dropdown-link-profile"
               %li
-                = link_to 'My goals', profile_user_goals_path(params[:id]), id: "dropdown-link-goals"
+                = link_to 'My goals', profile_user_goals_path(profile), id: "dropdown-link-goals"
           %li
             = link_to 'All goals', global_goals_path
           %li
