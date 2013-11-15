@@ -91,6 +91,6 @@ class GlobalGoalsController < ApplicationController
   protected
 
   def build_user_goal(gg)
-    UserGoal.create(global_goal_id: gg.id)
+    UserGoal.create(global_goal_id: gg.id, description: gg.description, title: gg.title)
   end
 end
