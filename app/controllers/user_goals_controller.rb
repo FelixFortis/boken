@@ -19,11 +19,7 @@ class UserGoalsController < ApplicationController
   end
 
   def index
-    if params[:tag]
-      @user_goals  = UserGoal.tagged_with(params[:tag])
-    else
-      @user_goals = UserGoal.all
-    end
+    @user_goals = UserGoal.all
 
     respond_to do |format|
       format.html # index.html.erb
