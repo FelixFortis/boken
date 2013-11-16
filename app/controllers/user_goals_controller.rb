@@ -28,8 +28,8 @@ class UserGoalsController < ApplicationController
   end
 
   def show
-    @profile = current_user
-    @user_goal = current_profile.user_goal
+    @profile = Profile.find(params[:id])
+    @user_goal = UserGoal.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb

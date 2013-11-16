@@ -2,10 +2,13 @@
 
 %p
   %b User:
-  = @user_goal.user_id
+  = current_user.username
 %p
   %b Goal:
-  = @user_goal.goal_id
+  = @user_goal.title
+%p
+  %b Description:
+  = @user_goal.description
 %p
   %b Notes:
   = @user_goal.notes
@@ -19,6 +22,6 @@
   %b Complete:
   = @user_goal.complete
 
-= link_to 'Edit', edit_user_goal_path(@user_goal)
+= link_to 'Edit', edit_profile_user_goal_path(@user_goal)
 \|
-= link_to 'Back', user_goals_path
+= link_to 'Back', profile_user_goals_path
