@@ -1,4 +1,4 @@
-class UserGoalsController < InheritedResources::Base
+class UserGoalsController < ApplicationController
 
   def new
     @profile = Profile.find(params[:id])
@@ -15,6 +15,19 @@ class UserGoalsController < InheritedResources::Base
         format.html { redirect_to @user_goal, notice: 'Goal successfully created' }
         format.json { render json: @user_goal, status: :created, location: @user_goal }
       end
+    end
+  end
+
+  def index
+    if params[:tag]
+      @user_goals  = UserGoal.tagged_with(params[:tag])
+    else
+      @user_goals = UserGoal.all
+    end
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @user_goals }
     end
   end
 
