@@ -40,13 +40,14 @@ class UserGoalsController < ApplicationController
   # GET /users/:user_id/user_goals/:id/edit
   def edit
     #1st you retrieve the profile thanks to params[:user_id]
-    @profile = Profile.find(params[:user_id])
+    @user = User.find(params[:user_id])
+    @profile = @user.profile
     #2nd you retrieve the user_goal thanks to params[:id]
     @user_goal = @profile.user_goals.find(params[:id])
   end
 
-  # PUT /users/:user_id/user_goals/:id
-  # PUT /users/:user_id/user_goals/:id.xml
+  # PUT /profiles/:profile_id/user_goals/:id
+  # PUT /profiles/:profile_id/user_goals/:id.xml
   def update
     #1st you retrieve the profile thanks to params[:user_id]
     @profile = Profile.find(params[:user_id])
