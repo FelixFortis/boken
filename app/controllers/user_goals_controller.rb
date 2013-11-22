@@ -39,6 +39,7 @@ class UserGoalsController < ApplicationController
 
   # GET /users/:user_id/user_goals/:id/edit
   def edit
+    @profile = Profile.find(params[:id])
     @user_goal = UserGoal.find(params[:id])
   end
 
