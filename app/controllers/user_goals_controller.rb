@@ -47,14 +47,14 @@ class UserGoalsController < ApplicationController
   # PUT /profiles/:profile_id/user_goals/:id.xml
   def update
     #1st you retrieve the profile thanks to params[:user_id]
-    @profile = Profile.find(params[:user_id])
+    # @profile = Profile.find(params[:user_id])
     #2nd you retrieve the user_goal thanks to params[:id]
-    @user_goal = @profile.user_goals.find(params[:id])
+    @user_goal = UserGoal.find(params[:id])
 
     respond_to do |format|
       if @user_goal.update_attributes(params[:user_goal])
         #1st argument of redirect_to is an array, in order to build the correct route to the nested resource user_goal
-        format.html { redirect_to([@user_goal.user, @user_goal], :notice => 'Goal was successfully updated.') }
+        format.html { redirect_to(profile_user_goals_path, :notice => 'Goal was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
