@@ -1,11 +1,11 @@
-= simple_form_for(@user_goal) do |f|
+= simple_form_for(@user_goal, :url => profile_user_goal_path(@profile)) do |f|
   = f.error_notification
 
   .form-inputs
 
-    = f.input :user_id
+    = f.input :title
 
-    = f.input :goal_id
+    = f.input :description
 
     = f.input :notes
 
