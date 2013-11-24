@@ -1,28 +1,37 @@
 %h1 Listing user_goals
 
-%table
-  %tr
-    %th Title
-    %th Description
-    %th Notes
-    %th Deadline
-    %th Percent complete
-    %th Complete
-    %th
-    %th
-    %th
+%table.table
+- @user_goals.each do |user_goal|
+  .alternating
+    %h4
+      =user_goal.title
+    %p
+      %strong
+        Description:
+      = user_goal.description
+    %p
+      %strong
+        Notes:
+      = user_goal.notes
+    %p
+      %strong
+        Deadline:
+      = user_goal.deadline
+    %p
+      %strong
+        Notes:
+      = user_goal.percent_complete
+    %p
+      %strong
+        Complete:
+      = user_goal.complete
+    %br
+    .btn-group
+      .btn
+        = link_to 'Show', profile_user_goal_path(user_goal)
+        = link_to 'Edit', edit_profile_user_goal_path(user_goal)
 
-  - @user_goals.each do |user_goal|
-    %tr
-      %td= user_goal.title
-      %td= user_goal.description
-      %td= user_goal.notes
-      %td= user_goal.deadline
-      %td= user_goal.percent_complete
-      %td= user_goal.complete
-      %td= link_to 'Show', profile_user_goal_path(user_goal)
-      %td= link_to 'Edit', edit_profile_user_goal_path(user_goal)
-
-%br
-
-= link_to 'New goal', new_profile_user_goal_path
+.index-bottom
+  .btn-group
+    .btn.btn-success
+      = link_to 'New goal', new_global_goal_path
